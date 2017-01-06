@@ -1,17 +1,19 @@
 # https://github.com/LibraryOfCongress/bagit-python/issues/70
 {% set name = "bagit" %}
 {% set version = "1.5.5" %}
+{% set commit = "c0ba65714823c054b3a8b610e8967e70478204f3" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  git_url: https://github.com/LibraryOfCongress/bagit-python.git
-  git_rev: 613a82849d0dd43761e005606cd4c7ba3cd44188
+  fn: {{ commit }}.tar.gz
+  url: https://github.com/LibraryOfCongress/bagit-python/archive/{{ commit }}.tar.gz
+  sha256: 86a60cc6d78cf3b57bd9df56122e8244424285c016a93794b0dd91cbcd0e9cf4
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -28,7 +30,7 @@ test:
     - bagit
   commands:
     - bagit.py --version
-    
+
 about:
   home: https://libraryofcongress.github.io/bagit-python/
   summary: 'Work with BagIt packages from Python'
