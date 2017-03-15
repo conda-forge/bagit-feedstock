@@ -34,7 +34,6 @@ about:
   home: https://libraryofcongress.github.io/bagit-python/
   summary: 'Work with BagIt packages from Python'
   license: Public-Domain
-  license_family: PUBLIC-DOMAIN
   dev_url: https://github.com/LibraryOfCongress/bagit-python
   doc_url: https://libraryofcongress.github.io/bagit-python/
 
