@@ -18,10 +18,12 @@ build:
 
 requirements:
   build:
+    - gettext
     - python
     - setuptools
     - setuptools_scm
   run:
+    - gettext
     - python
     - setuptools
 
