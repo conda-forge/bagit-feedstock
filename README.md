@@ -7,7 +7,7 @@ Package license: Public-Domain
 
 Feedstock license: BSD 3-Clause
 
-Summary: Work with BagIt packages from Python
+Summary: A Python library and command line utility for working with BagIt style packages.
 
 
 

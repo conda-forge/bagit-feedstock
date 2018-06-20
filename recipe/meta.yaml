@@ -1,26 +1,29 @@
 # https://github.com/LibraryOfCongress/bagit-python/issues/70
 {% set name = "bagit" %}
-{% set version = "1.5.5" %}
-{% set commit = "c0ba65714823c054b3a8b610e8967e70478204f3" %}
+{% set version = "1.6.0b6" %}
+{% set build = 0 %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
+# Needs to be built from a git checkout since it uses setuptools_scm
 source:
   git_url: https://github.com/LibraryOfCongress/bagit-python.git
-  git_rev: 613a82849d0dd43761e005606cd4c7ba3cd44188
+  git_rev: v{{ version }}
 
 build:
-  number: 1
+  number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
+    - gettext
     - python
     - setuptools
     - setuptools_scm
   run:
+    - gettext
     - python
     - setuptools
 
@@ -32,7 +35,7 @@ test:
 
 about:
   home: https://libraryofcongress.github.io/bagit-python/
-  summary: 'Work with BagIt packages from Python'
+  summary: 'A Python library and command line utility for working with BagIt style packages.'
   license: Public-Domain
   dev_url: https://github.com/LibraryOfCongress/bagit-python
   doc_url: https://libraryofcongress.github.io/bagit-python/
