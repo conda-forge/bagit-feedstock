@@ -1,24 +1,22 @@
-# https://github.com/LibraryOfCongress/bagit-python/issues/70
-{% set name = "bagit" %}
-{% set version = "1.5.5" %}
-{% set commit = "c0ba65714823c054b3a8b610e8967e70478204f3" %}
+{% set version = "1.6.4" %}
 
 package:
-  name: {{ name }}
+  name: bagit
   version: {{ version }}
 
 source:
-  git_url: https://github.com/LibraryOfCongress/bagit-python.git
-  git_rev: 613a82849d0dd43761e005606cd4c7ba3cd44188
+  url: https://pypi.io/packages/source/b/bagit/bagit-{{ version }}.tar.gz
+  sha256: 91c5e253ad4ae0c5a5e795c689cda348c01286c671e9f6ca5cab0018980f9be9
 
 build:
-  number: 1
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 0
+  noarch: python
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
     - setuptools_scm
   run:
     - python
@@ -32,11 +30,12 @@ test:
 
 about:
   home: https://libraryofcongress.github.io/bagit-python/
-  summary: 'Work with BagIt packages from Python'
   license: Public-Domain
+  summary: 'Work with BagIt packages from Python'
   dev_url: https://github.com/LibraryOfCongress/bagit-python
   doc_url: https://libraryofcongress.github.io/bagit-python/
 
 extra:
   recipe-maintainers:
     - kwilcox
+    - ocefpaf
