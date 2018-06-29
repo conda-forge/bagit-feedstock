@@ -1,4 +1,4 @@
-{% set version = "1.6.4" %}
+{% set version = "1.7.0" %}
 
 package:
   name: bagit
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/b/bagit/bagit-{{ version }}.tar.gz
-  sha256: 91c5e253ad4ae0c5a5e795c689cda348c01286c671e9f6ca5cab0018980f9be9
+  sha256: f248a3dad06fd3e5d329217baace6ade79d106579696b13e2c0bbc583101ded4
 
 build:
   number: 0
