@@ -3,7 +3,7 @@ About bagit
 
 Home: https://libraryofcongress.github.io/bagit-python/
 
-Package license: Public-Domain
+Package license: LicenseRef-Public-Domain
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bagit-feedstock/blob/master/LICENSE.txt)
 
