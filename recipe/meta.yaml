@@ -1,37 +1,41 @@
-{% set version = "1.7.0" %}
+{% set name = "bagit" %}
+{% set version = "1.8.1" %}
+
 
 package:
-  name: bagit
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/b/bagit/bagit-{{ version }}.tar.gz
-  sha256: f248a3dad06fd3e5d329217baace6ade79d106579696b13e2c0bbc583101ded4
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bagit-{{ version }}.tar.gz
+  sha256: 37df1330d2e8640c8dee8ab6d0073ac701f0614d25f5252f9e05263409cee60c
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3
     - pip
     - setuptools_scm
   run:
-    - python
-    - setuptools
+    - python >=3
 
 test:
   imports:
     - bagit
+  requires:
+    - pip
   commands:
+    - pip check
     - bagit.py --version
 
 about:
   home: https://libraryofcongress.github.io/bagit-python/
-  license: Public-Domain
-  summary: 'Work with BagIt packages from Python'
+  license: LicenseRef-Public-Domain
+  summary: Work with BagIt packages from Python
   dev_url: https://github.com/LibraryOfCongress/bagit-python
   doc_url: https://libraryofcongress.github.io/bagit-python/
 
