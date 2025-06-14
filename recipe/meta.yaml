@@ -1,5 +1,5 @@
 {% set name = "bagit" %}
-{% set version = "1.8.1" %}
+{% set version = "1.9.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bagit-{{ version }}.tar.gz
-  sha256: 37df1330d2e8640c8dee8ab6d0073ac701f0614d25f5252f9e05263409cee60c
+  sha256: 9455006c2d1df88be95ec1fccabc5ea623389589ea4c85b3d85bd256f29d7656
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
